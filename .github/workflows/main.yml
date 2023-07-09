@@ -38,4 +38,4 @@ jobs:
       # что нужно проверить файлы только в папке backend/
       run: |
         cd backend/
-        python manage.py ./cats/test
+        python manage.py test
