@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = bool(strtobool(os.getenv('DEBUG', 'False')))
 
-if os.getenv('ALLOWED_HOSTS').split(','):
+if os.getenv('ALLOWED_HOSTS'):
     ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 else:
     ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
