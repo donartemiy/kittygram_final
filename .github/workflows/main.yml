@@ -169,7 +169,6 @@ jobs:
           # Тут вместо username должен быть ваш логин на Docker Hub
           tags: ${{ secrets.DOCKER_USERNAME }}/kittygram_final_gateway:latest
 
-
   deploy:
     runs-on: ubuntu-latest
     needs: 
