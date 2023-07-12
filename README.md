@@ -31,6 +31,9 @@ kittygram - готовый к деплою сайт по добавлению к
 5. Собрать контейнеры и запуститть
 ```bash
 sudo docker compose -f docker-compose.production.yml up -d
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
 ```
 6. Доступ к сайту предоставляется через порт 9000.
 
