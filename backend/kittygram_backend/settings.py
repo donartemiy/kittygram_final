@@ -1,14 +1,20 @@
 # flake8: noqa
 import os
+from distutils.util import strtobool
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
 
-DEBUG = True
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
+# SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
 
-ALLOWED_HOSTS = ['127.0.0.1', '158.160.7.157', 'gramkitty.ddns.net', 'localhost']
+# DEBUG = True
+
+# ALLOWED_HOSTS = ['127.0.0.1', '158.160.7.157', 'gramkitty.ddns.net', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
