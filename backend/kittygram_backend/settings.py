@@ -5,20 +5,15 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
-SECRET_KEY = os.getenv('SECRET_KEY')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-print('\n\n\nBASE_DIR:', BASE_DIR)
-print('\n\n\nNON BASE_DIR:', Path(__file__).resolve())
 
-
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$')
 
 # SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
-
-# DEBUG = True
-
-# ALLOWED_HOSTS = ['127.0.0.1', '158.160.7.157', 'gramkitty.ddns.net', 'localhost']
+DEBUG = True
+ALLOWED_HOSTS = ['127.0.0.1', '158.160.7.157', 'gramkitty.ddns.net', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
