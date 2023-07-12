@@ -14,11 +14,11 @@ DEBUG = bool(strtobool(os.getenv('DEBUG', 'False')))
 
 # Условие нужно, т.к. one line конструкция не работает:
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ['127.0.0.1', 'localhost']).split(',')
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
-if ALLOWED_HOSTS:
-    ALLOWED_HOSTS = ALLOWED_HOSTS.split(',')
-else:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+# if ALLOWED_HOSTS:
+#     ALLOWED_HOSTS = ALLOWED_HOSTS.split(',')
+# else:
+#     ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 INSTALLED_APPS = [
